@@ -59,6 +59,30 @@ function Card ( { title } : CardProps) {
                 </View>
             </View>
         );
+    } else if (title === 'food') {
+        return (
+            <View style={styles.foodCard}>
+                <Text>food</Text>
+            </View>
+        );
+    } else if (title === 'transport') {
+        return (
+            <View style={styles.transportCard}>
+                <Text>transport</Text>
+            </View>
+        );
+    } else if (title === 'entertainment') {
+        return (
+            <View style={styles.entertainmentCard}>
+                <Text>entertainment</Text>
+            </View>
+        )
+    } else if (title === 'bills') {
+        return (
+            <View style={styles.billsCard}>
+                <Text>bills</Text>
+            </View>
+        );
     }
 }
 
@@ -85,6 +109,54 @@ const styles = StyleSheet.create({
         borderColor: 'gray',
         borderRadius: 15,
         backgroundColor: '#fff'
+    },
+    foodCard: {
+        borderBlockColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 10,
+        width: 350,
+        margin: 5,
+        height: 50,
+        display: 'flex',
+        flexDirection: 'column', 
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+    },
+    transportCard: {
+        borderBlockColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 10,
+        width: 350,
+        margin: 5,
+        height: 50,
+        display: 'flex',
+        flexDirection: 'column', 
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+    },
+    entertainmentCard: {
+        borderBlockColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 10,
+        width: 350,
+        margin: 5,
+        height: 50,
+        display: 'flex',
+        flexDirection: 'column', 
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+    },
+    billsCard: {
+        borderBlockColor: 'gray',
+        borderWidth: 1,
+        borderRadius: 10,
+        width: 350,
+        margin: 5,
+        height: 50,
+        display: 'flex',
+        flexDirection: 'column', 
+        justifyContent: 'center',
+        alignItems: 'flex-start',
     }
 })
 

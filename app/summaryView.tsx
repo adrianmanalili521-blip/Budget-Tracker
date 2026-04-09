@@ -1,11 +1,22 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
+
+import CustomToggleButton from '../components/customToggleButton';
 
 function SummaryView () {
     return (
-        <View>
-            <Text>this is summary view</Text>
+        <View style={styles.container}>
+            <CustomToggleButton />
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+})
 
 export default SummaryView;

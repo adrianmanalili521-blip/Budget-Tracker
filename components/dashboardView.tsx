@@ -23,11 +23,12 @@ function DashboardView () {
 
 const styles = StyleSheet.create({
     container: {
-        padding: 20
+        padding: 20,
+        backgroundColor: '#EEEEEE'
     },
     main: {
         padding: 20,
-        backgroundColor: '#e67d22',
+        backgroundColor: '#2FA084',
         height: 200,
         display: 'flex', 
         flexDirection: 'column',

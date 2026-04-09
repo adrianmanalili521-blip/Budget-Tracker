@@ -24,7 +24,7 @@ function DashboardView () {
 const styles = StyleSheet.create({
     container: {
         padding: 20,
-        backgroundColor: '#EEEEEE'
+        backgroundColor: '#EEEEEE',
     },
     main: {
         padding: 20,
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'flex-start',
-        gap: 5
+        gap: 5,
+        borderRadius: 15
     },
     carContainer: {
         display: 'flex',

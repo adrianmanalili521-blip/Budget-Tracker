@@ -1,8 +1,12 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useState } from 'react';
 
-function CustomToggleButton () {
-    const [selected, setSelected] = useState('week');
+interface CustomToggleButtonProps {
+    selected: string, 
+    setSelected: (value: string) => void
+}
+
+function CustomToggleButton ( {selected, setSelected} : CustomToggleButtonProps ) {
 
     return (
         <View style={styles.container}>

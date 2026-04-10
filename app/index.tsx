@@ -1,6 +1,9 @@
 import { FlatList, Text, View } from "react-native";
 
-import CustomButton from '../components/customButton';
+import CustomButton from '../components/customButton'
+import AddItemView from '../components/addItemView'
+
+import { useState } from 'react'
 
 export default function Index() {
   const tempData = [
@@ -15,6 +18,19 @@ export default function Index() {
     { id: 9, title: 'transport', description: 'Taxi ride', price: 8.75 },
     { id: 10, title: 'subscription', description: 'Streaming service', price: 9.99 }
   ];
+
+  const [show, setShow] = useState(false);
+  const [exit, setExit] = useState(false);
+
+  function handleExit () {
+    setExit(true);
+  }
+
+  function handleClick () {
+    setShow(true);
+    setExit(false);
+  }
+
   return (
     <View style={{flex: 1, position: 'relative'}}>
       <FlatList
@@ -28,7 +44,17 @@ export default function Index() {
         )}
       />
 
-      <CustomButton />
+      <CustomButton 
+        title="add" 
+        handleClick={handleClick}
+        handleExit={handleExit}
+      />
+      {show && !exit &&(
+        <AddItemView  
+          handleClick={handleExit}
+          handleExit={handleExit}
+        />
+      )}
     </View>
   );
 }

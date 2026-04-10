@@ -1,4 +1,4 @@
-import { Tabs } from 'expo-router'
+import { Tabs, usePathname } from 'expo-router'
 import { StyleSheet, View } from 'react-native'
 
 import AntDesign from '@expo/vector-icons/AntDesign'
@@ -8,10 +8,9 @@ import CustomHeader from '../components/customeHeader'
 import DashboardView from '../components/dashboardView'
 
 export default function TabLayout() {
+
   return (
     <View style={styles.container}>
-      <CustomHeader />
-      <DashboardView />
       <Tabs screenOptions={{ headerShown: false, tabBarActiveTintColor: '#000' }}>
         <Tabs.Screen
           name='index'
@@ -32,7 +31,15 @@ export default function TabLayout() {
             ),
           }}
         />
+        <Tabs.Screen 
+          name='+not-found'
+          options={{
+            href: null
+          }}
+        />
+
       </Tabs>
+
     </View>
   )
 }

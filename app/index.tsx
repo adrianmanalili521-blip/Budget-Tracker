@@ -2,6 +2,8 @@ import { FlatList, Text, View } from "react-native";
 
 import CustomButton from '../components/customButton'
 import AddItemView from '../components/addItemView'
+import CustomHeader from '../components/customeHeader'
+import DashboardView from '../components/dashboardView'
 
 import { useState } from 'react'
 
@@ -33,6 +35,8 @@ export default function Index() {
 
   return (
     <View style={{flex: 1, position: 'relative'}}>
+      <CustomHeader />
+      <DashboardView />
       <FlatList
         style={{flex: 1, backgroundColor: '#EEEEEE'}}
         data={tempData}

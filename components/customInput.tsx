@@ -4,22 +4,26 @@ import Fontisto from '@expo/vector-icons/Fontisto';
 
 interface CustomInputProp {
     title: string,
-    value: string;
-    setValue?: (text: string) => void; // optional for amount
+    date?: string,
+    setDate?: (text: string) => void
+    amount?: string,
+    setAmount?: (number: string) => void,
+    description?: string,
+    setDescriptiom?: (desc: string) => void
 }
 
-function CustomInput ( { title, value, setValue} : CustomInputProp) {
+function CustomInput ( { title, date, setDate, amount, setAmount, description, setDescriptiom } : CustomInputProp) {
     if (title === 'amount') {
         return (
-            <TextInput placeholder='P 0.00' style={styles.container} />
+            <TextInput keyboardType='decimal-pad' placeholder='P 0.00' value={amount} onChangeText={setAmount} style={styles.container} />
         );
     } else if (title === 'date') {
         return (
             <View style={styles.container}>
                 <TextInput
                     placeholder="MM/DD/YYYY"
-                    value={value}                // now date is a string
-                    onChangeText={setValue} // updates parent state
+                    value={date}                // now date is a string
+                    onChangeText={setDate} // updates parent state
                     style={{ flex: 1, height: '100%' }}
                 />
                 <Fontisto name="date" size={24} color="black" style={{position: 'absolute', right: 20}}/>
@@ -27,7 +31,7 @@ function CustomInput ( { title, value, setValue} : CustomInputProp) {
         );
     } else if (title === 'description') {
         return (
-            <TextInput placeholder='Enter description' style={styles.container} />
+            <TextInput placeholder='Enter description' value={description} onChangeText={setDescriptiom} style={styles.container} />
         );
     }
 }

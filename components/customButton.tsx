@@ -5,14 +5,15 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 interface CustomButtonProp {
     title: string,
-    handleClick: () => void
-    handleExit: () => void
+    handleAdd?: () => void,
+    handleExit?: () => void,
+    handleAddTransaction?: () => void,
 }
 
-function CustomButton ( { title, handleClick, handleExit} : CustomButtonProp ) {
+function CustomButton ( { title, handleAdd, handleExit, handleAddTransaction } : CustomButtonProp ) {
     if (title === 'add') {
         return (
-            <TouchableOpacity onPress={handleClick} style={{height: 50, width: 50, borderRadius: 90, justifyContent: 'center', alignItems: 'center', backgroundColor: '#2FA084', position: 'absolute', zIndex: 999, elevation: 5 , right: 20, bottom: 20}}>
+            <TouchableOpacity onPress={handleAdd} style={{height: 50, width: 50, borderRadius: 90, justifyContent: 'center', alignItems: 'center', backgroundColor: '#2FA084', position: 'absolute', zIndex: 999, elevation: 5 , right: 20, bottom: 20}}>
                 <Ionicons name="add" size={24} color="black" />
             </TouchableOpacity>
         );
@@ -36,7 +37,7 @@ function CustomButton ( { title, handleClick, handleExit} : CustomButtonProp ) {
         );
     } else if (title === 'addTransaction') {
         return (
-            <TouchableOpacity style={{height: 50, width: '100%', backgroundColor: '#1F6F5F', borderRadius: 10, justifyContent: 'center', alignItems: 'center', marginTop: 10}}>
+            <TouchableOpacity onPress={handleAddTransaction} style={{height: 50, width: '100%', backgroundColor: '#1F6F5F', borderRadius: 10, justifyContent: 'center', alignItems: 'center', marginTop: 10}}>
                 <Text style={{fontSize: 22, fontWeight: 'bold'}}>Add Transaction</Text>
             </TouchableOpacity>
         );

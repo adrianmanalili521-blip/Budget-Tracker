@@ -5,10 +5,13 @@ import AddItemView from '../components/addItemView'
 import CustomHeader from '../components/customeHeader'
 import DashboardView from '../components/dashboardView'
 
+import { Transaction }from '../interface/transactionInterface'
+
 import { useState } from 'react'
 
+
 export default function Index() {
-  const tempData = [
+  const [tempData, setTempData] = useState<Transaction[]>([
     { id: 1, title: 'food', description: 'Grocery Shopping', price: 45.00 },
     { id: 2, title: 'transport', description: 'Bus fare', price: 2.50 },
     { id: 3, title: 'food', description: 'Lunch at cafe', price: 12.00 },
@@ -19,19 +22,22 @@ export default function Index() {
     { id: 8, title: 'health', description: 'Pharmacy items', price: 10.50 },
     { id: 9, title: 'transport', description: 'Taxi ride', price: 8.75 },
     { id: 10, title: 'subscription', description: 'Streaming service', price: 9.99 }
-  ];
+  ]);
+
+  function addTransaction (newItem: Transaction) {
+    setTempData(prev => [...prev, newItem]);
+  }
 
   const [show, setShow] = useState(false);
-  const [exit, setExit] = useState(false);
+
+  function handleAdd () {
+    setShow(true);
+  }
 
   function handleExit () {
-    setExit(true);
+    setShow(false);
   }
 
-  function handleClick () {
-    setShow(true);
-    setExit(false);
-  }
 
   return (
     <View style={{flex: 1, position: 'relative'}}>
@@ -48,15 +54,17 @@ export default function Index() {
         )}
       />
 
-      <CustomButton 
+      { !show && (<CustomButton 
         title="add" 
-        handleClick={handleClick}
+        handleAdd={handleAdd}
         handleExit={handleExit}
-      />
-      {show && !exit &&(
+      />)}
+
+      {show &&(
         <AddItemView  
-          handleClick={handleExit}
+          handleAdd={handleAdd}
           handleExit={handleExit}
+          addTransaction={addTransaction}
         />
       )}
     </View>

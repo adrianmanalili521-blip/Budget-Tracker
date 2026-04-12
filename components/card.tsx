@@ -140,7 +140,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         width: 350,
-        margin: 5,
         height: 80,
         padding: 10,
         display: 'flex',

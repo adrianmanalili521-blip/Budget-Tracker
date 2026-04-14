@@ -6,9 +6,9 @@ function DashboardView () {
     return (
         <View style={styles.container}>
             <View style={styles.main}>
-                <Text>Total Balance</Text>
+                <Text style={{fontSize: 32}}>Total Balance</Text>
                 <Text style={{fontSize: 32}}>P2413.51</Text>
-                    <View style={styles.carContainer}>
+                    <View style={styles.cardContainer}>
                     <Card 
                         title="Income"
                     />
@@ -33,11 +33,11 @@ const styles = StyleSheet.create({
         display: 'flex', 
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'flex-start',
+        alignItems: 'center',
         gap: 5,
         borderRadius: 15
     },
-    carContainer: {
+    cardContainer: {
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',

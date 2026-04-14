@@ -103,7 +103,7 @@ function AddItemView ( { handleAdd, handleExit, addTransaction } : AddItemViewPr
             <CustomInput title='date' date={date} setDate={setDate}/>
 
             <Text style={{fontWeight: 'bold', marginTop: 10}}>Description</Text>
-            <CustomInput title='description' description={description} setDescriptiom={setDescription}/>
+            <CustomInput title='description' description={description} setDescription={setDescription}/>
             <CustomButton 
                 title='addTransaction'
                 handleAddTransaction={handleAddTransaction}

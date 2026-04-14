@@ -9,10 +9,10 @@ interface CustomInputProp {
     amount?: string,
     setAmount?: (number: string) => void,
     description?: string,
-    setDescriptiom?: (desc: string) => void
+    setDescription?: (desc: string) => void
 }
 
-function CustomInput ( { title, date, setDate, amount, setAmount, description, setDescriptiom } : CustomInputProp) {
+function CustomInput ( { title, date, setDate, amount, setAmount, description, setDescription } : CustomInputProp) {
     if (title === 'amount') {
         return (
             <TextInput keyboardType='decimal-pad' placeholder='P 0.00' value={amount} onChangeText={setAmount} style={styles.container} />
@@ -31,7 +31,7 @@ function CustomInput ( { title, date, setDate, amount, setAmount, description, s
         );
     } else if (title === 'description') {
         return (
-            <TextInput placeholder='Enter description' value={description} onChangeText={setDescriptiom} style={styles.container} />
+            <TextInput placeholder='Enter description' value={description} onChangeText={setDescription} style={styles.container} />
         );
     }
 }
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
         width: '100%',
         borderRadius: 10,
         backgroundColor: '#ddddec',
-        padding: 20,
+        paddingLeft: 15,
         marginTop: 5,
         justifyContent: 'center',
         alignItems: 'flex-start'

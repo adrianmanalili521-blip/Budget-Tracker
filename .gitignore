@@ -5,5 +5,5 @@
 expo-env.d.ts
 # @end expo-cli
 
-# mytoken
-#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
+node_modules/
+myToken
